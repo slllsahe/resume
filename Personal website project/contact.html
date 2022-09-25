@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>H o m e</title>
+    <!-- Google Tag Manager -->
+    <script>(function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                    new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-MBGNMX7');</script>
+    <!-- End Google Tag Manager -->
+
+    <link rel="stylesheet" href="contactstyle.css">
+
+</head>
+
+<body>
+
+    <header class="header">
+        <a href="index.html" class="logo">S L</a>
+        <input class="menu-btn" type="checkbox" id="menu-btn" />
+        <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
+        <ul class="menu">
+            <li><a href="Aboutme.html">About me</a></li>
+            <li><a href="careers.html">Careers</a></li>
+            <li><a href="Review.html">Review</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </header>
+
+    <section>
+        <div class="container">
+            <div style="text-align:center">
+                <h2>Contact Us</h2>
+                <p>Hello, leave me a message or live chat is available 9am - 5pm :</p>
+            </div>
+            <div class="row">
+                <div class="column">
+                    <div id="map" style="width:100%"></div>
+                </div>
+                <div class="column">
+                    <form action="/action_page.php">
+                        <label for="fname">Your name</label>
+                        <input type="text" id="fname" name="firstname" placeholder="Your name..">
+                        <label for="email">Email</label>
+                        <input type="text" id="email" name="lastname" placeholder="Your Email..">
+                        <label for="subject">Message</label>
+                        <textarea id="subject" name="subject" placeholder="Write something.."
+                            style="height:250px"></textarea>
+                        <input type="submit" value="Send">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="https://api.mqcdn.com/sdk/mapquest-js/v1.3.2/mapquest.js"></script>
+    <link type="text/css" rel="stylesheet" href="https://api.mqcdn.com/sdk/mapquest-js/v1.3.2/mapquest.css" />
+    <script>
+        var L;
+
+        window.onload = function () {
+            L.mapquest.key = 'YOUR-API-KEY-HERE';
+
+            // 'map' refers to a <div> element with the ID map
+            var map = L.mapquest.map('map', {
+                center: [51.3708375, -0.2757852],
+                layers: L.mapquest.tileLayer('map'),
+                zoom: 10
+            });
+
+            // 2. Add control
+            map.addControl(L.mapquest.control());
+
+            // 3. Add icon
+            L.marker([51.3708375, -0.2757852], {
+                icon: L.mapquest.icons.marker({
+                    primaryColor: '#22407F',
+                    secondaryColor: '#3B5998',
+                    shadow: true,
+                    size: 'md',
+                    symbol: 'S'
+                })
+            })
+                .bindPopup('This is where I live!')
+                .addTo(map);
+        }
+    </script>
+
+    <!--Start of Tawk.to Script-->
+    <script type="text/javascript">
+        var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
+        (function () {
+            var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
+            s1.async = true;
+            s1.src = 'https://embed.tawk.to/60e1a9ee649e0a0a5cca7408/1f9onvj7o';
+            s1.charset = 'UTF-8';
+            s1.setAttribute('crossorigin', '*');
+            s0.parentNode.insertBefore(s1, s0);
+        })();
+    </script>
+    <!--End of Tawk.to Script-->
+</body>
+
+</html>
